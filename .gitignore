@@ -2,3 +2,5 @@
 *.o
 *.out
 *.a
+cmake-build-debug
+.idea
