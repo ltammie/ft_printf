@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sauron <sauron@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ltammie <ltammie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/18 02:33:57 by sauron            #+#    #+#             */
-/*   Updated: 2020/01/18 17:52:27 by ltammie          ###   ########.fr       */
+/*   Created: 2020/01/18 17:22:05 by ltammie           #+#    #+#             */
+/*   Updated: 2020/01/18 17:56:00 by ltammie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+#include "ft_printf.h"
+#include <stdio.h>
 
-#include "../libft/libft.h"
-#include <stdarg.h>
-
-
-typedef struct	s_cp
+int		ft_printf(const char * format, ...)
 {
+	int 	nchars;
+	va_list pr;
 
-}				t_cp;
+	nchars = 0;
+	va_start(pr, format);
 
-int		ft_printf(const char * format, ...);
+	//...//
 
-#endif
+	va_end(pr);
+	return (nchars);
+}
+
+int 	main(void)
+{
+	
+}
