@@ -19,4 +19,3 @@ int		ft_printf(const char *format, ...)
 	va_end(pr);
 	return (n_chars);
 }
-
