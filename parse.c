@@ -12,7 +12,7 @@ static t_cp *ft_new_t_cp(void)
 	new_t_cp->space_flag = 0;
 	new_t_cp->width = 0;
 	new_t_cp->precision = 0;
-	new_t_cp->arg_type = 0;
+	new_t_cp->arg_type = 'z'; //change later
 	new_t_cp->length = 0;
 	return (new_t_cp);
 }
@@ -23,10 +23,19 @@ t_cp	ft_parse(const char *str, int index)
 
 	res = ft_new_t_cp();
 
+//	printf("index before parsing = %d\n", index);
+
 	index = parse_flags(str, index, res);
+	printf("index after flags = %d\n", index);
+
 	index = parse_width(str, index, res);
+	printf("index after width = %d\n", index);
+
 	index = parse_precision(str, index, res);
+	printf("index after precision = %d\n", index);
+
 	parse_type(str, index, res);
+
 	return (*res);
 }
 

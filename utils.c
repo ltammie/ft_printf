@@ -12,3 +12,8 @@ int		get_nbr_length(int nbr)
 	}
 	return (len);
 }
+
+int		is_nonzero_digit(int c)
+{
+	return (c >= '1' && c <= '9');
+}

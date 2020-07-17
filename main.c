@@ -2,6 +2,9 @@
 
 int 	main(void)
 {
-	ft_printf("hello world %d cake is a lie %d\n", 15, 20);
+	printf("mine:\n");
+	ft_printf("hello world %00000+++++---4d\n", 15);
+	printf("orig:\n");
+	printf("hello world %00000+++++---4d\n", 15);
 	return (0);
 }

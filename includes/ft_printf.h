@@ -4,6 +4,11 @@
 #include "../libft/libft.h"
 #include <stdarg.h>
 
+
+//delete
+#include <stdio.h>
+//delete
+
 /*
  ** struct to store flags, width, precision, arg_type, length
  */
@@ -41,12 +46,19 @@ void			parse_type(const char *str, int index, t_cp *z);
  ** ------------pr_funcs----------------
  */
 
-int				ft_pr(t_cp parsed_str);
+//int				ft_pr(t_cp parsed_str);
 
 /*
  ** ------------utils----------------
  */
 
 int				get_nbr_length(int nbr);
+int				is_nonzero_digit(int c);
+
+/*
+ ** -------------tmp--------------
+ */
+
+void		print_struct(t_cp res);
 
 #endif
