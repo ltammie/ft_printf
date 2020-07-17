@@ -7,6 +7,7 @@
 /*
  ** struct to store flags, width, precision, arg_type, length
  */
+
 typedef struct	s_cp
 {
 	u_int		flag;

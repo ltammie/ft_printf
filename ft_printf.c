@@ -13,7 +13,7 @@ int		ft_printf(const char *format, ...)
 	va_start(pr, format);
 	while (format[i] != '%' && format [i] != '\0')
 	{
-		write(1, format, 1);
+		ft_putchar(format[i]);
 		i++;
 	}
 	va_end(pr);
