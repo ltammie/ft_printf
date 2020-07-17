@@ -27,6 +27,6 @@ int				ft_printf(const char * format, ...);
  ** ------------parser_func-----------
  */
 
-t_cp			parse(char *str);
+t_cp			parse(const char *str, int index);
 
 #endif

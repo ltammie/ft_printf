@@ -4,7 +4,8 @@
 GCC = gcc $(FLAGS)
 FLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
-SRCS = ft_printf.c
+SRCS = ft_printf.c\
+		parse.c
 INC = includes/ft_printf.h
 OBJS = $(SRCS:.c=.o)
 LIB = -L libft -lft
@@ -40,7 +41,7 @@ clean:
 		make -C libft clean
 		rm -f $(OBJS)
 
-fclean: clean
+fclean: clean dclean
 		make -C libft fclean
 		rm -f $(NAME)
 
