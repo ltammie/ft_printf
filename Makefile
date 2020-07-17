@@ -5,7 +5,14 @@ GCC = gcc $(FLAGS)
 FLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
 SRCS = ft_printf.c\
-		parse.c
+		int_pr.c\
+		parse.c\
+		parse_flags.c\
+		parse_precision.c\
+		parse_type.c\
+		parse_width.c\
+		pr.c\
+		utils.c
 INC = includes/ft_printf.h
 OBJS = $(SRCS:.c=.o)
 LIB = -L libft -lft

@@ -16,7 +16,10 @@ int		ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			res = parse(format, ++i);
+			res = ft_parse(format, ++i);
+			printf("hashtag_flag = %d\nzero_flag = %d\nminus_flag = %d\nplus_flag = %d\nspace_flag = %d\n"
+		  "width = %zu\nprecision = %zu\narg_type = %c\nlength = %zu\n", res.hashtag_flag, res.zero_flag, res.minus_flag,
+		  res.plus_flag, res.space_flag, res.width, res.precision, res.arg_type, res.length);
 			if (res.arg_type == 'd')
 				ft_putnbr(va_arg(pr, int));
 			i += res.length;

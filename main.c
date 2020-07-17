@@ -2,6 +2,6 @@
 
 int 	main(void)
 {
-	ft_printf("hello world %d\n", 15);
+	ft_printf("hello world %d cake is a lie %d\n", 15, 20);
 	return (0);
 }
