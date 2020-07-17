@@ -20,10 +20,10 @@ typedef struct	s_cp
 	int 		minus_flag;
 	int 		plus_flag;
 	int 		space_flag;
-	size_t		width;
-	size_t 		precision;
+	int			width;
+	int 		precision;
 	char		arg_type;
-	size_t		length;
+	int			length;
 }				t_cp;
 
 /*
@@ -46,7 +46,7 @@ void			parse_type(const char *str, int index, t_cp *z);
  ** ------------pr_funcs----------------
  */
 
-//int				ft_pr(t_cp parsed_str);
+int				ft_pr(t_cp parsed_str);
 
 /*
  ** ------------utils----------------

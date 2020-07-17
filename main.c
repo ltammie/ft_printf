@@ -3,8 +3,8 @@
 int 	main(void)
 {
 	printf("mine:\n");
-	ft_printf("hello world %00000+++++---4d\n", 15);
+	ft_printf("%c\n", 15);
 	printf("orig:\n");
-	printf("hello world %00000+++++---4d\n", 15);
+	printf("%c\n", 15);
 	return (0);
 }

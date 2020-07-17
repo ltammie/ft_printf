@@ -26,13 +26,13 @@ t_cp	ft_parse(const char *str, int index)
 //	printf("index before parsing = %d\n", index);
 
 	index = parse_flags(str, index, res);
-	printf("index after flags = %d\n", index);
+//	printf("index after flags = %d\n", index);
 
 	index = parse_width(str, index, res);
-	printf("index after width = %d\n", index);
+//	printf("index after width = %d\n", index);
 
 	index = parse_precision(str, index, res);
-	printf("index after precision = %d\n", index);
+//	printf("index after precision = %d\n", index);
 
 	parse_type(str, index, res);
 

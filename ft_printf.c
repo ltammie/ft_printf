@@ -9,10 +9,10 @@ void		print_struct(t_cp res)
   	printf("minus_flag = %d\n", res.minus_flag);
   	printf("plus_flag = %d\n", res.plus_flag);
   	printf("space_flag = %d\n", res.space_flag);
-	printf("width = %zu\n", res.width);
-	printf("precision = %zu\n", res.precision);
+	printf("width = %d\n", res.width);
+	printf("precision = %d\n", res.precision);
   	printf("arg_type = %c\n", res.arg_type);
-  	printf("length = %zu\n", res.length);
+  	printf("length = %d\n", res.length);
 }
 
 int		ft_printf(const char *format, ...)
@@ -30,9 +30,8 @@ int		ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			res = ft_parse(format, ++i);
-			print_struct(res);
-			if (res.arg_type == 'd')
-				ft_putnbr(va_arg(pr, int));
+//			print_struct(res);
+
 			i += res.length;
 		}
 		ft_putchar(format[i]);
