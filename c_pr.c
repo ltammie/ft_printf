@@ -15,7 +15,6 @@ int			c_pr(t_cp z, va_list ap)
 	char c;
 
 	c = va_arg(ap, int);
-//	print_struct(z);
 	if (z.minus_flag == 1)
 	{
 		ft_putchar(c);

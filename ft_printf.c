@@ -33,8 +33,11 @@ int		ft_printf(const char *format, ...)
 			pr(res, ap);
 			i += res.length;
 		}
-		ft_putchar(format[i]);
-		i++;
+		else
+		{
+			ft_putchar(format[i]);
+			i++;
+		}
 	}
 	va_end(ap);
 	return (n_chars);

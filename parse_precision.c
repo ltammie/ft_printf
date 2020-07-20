@@ -7,9 +7,10 @@ int 	parse_precision(const char *str, int index, t_cp *z)
 	if (str[index] == '.')
 	{
 		index++;
-		z->width = ft_atoi(&str[index]);
-		z->length += get_nbr_length(z->width);
-		index += get_nbr_length(z->width);
+		z->length++;
+		z->precision = ft_atoi(&str[index]);
+		z->length += get_nbr_length(z->precision);
+		index += get_nbr_length(z->precision);
 	}
 	return (index);
 }
