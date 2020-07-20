@@ -46,14 +46,19 @@ void			parse_type(const char *str, int index, t_cp *z);
  ** ------------pr_funcs----------------
  */
 
-int				ft_pr(t_cp parsed_str);
+int				pr(t_cp parsed_str, va_list ap);
+int				c_pr(t_cp z, va_list ap);
+int				s_pr(t_cp z, va_list ap);
+
+
+
 
 /*
  ** ------------utils----------------
  */
 
 int				get_nbr_length(int nbr);
-int				is_nonzero_digit(int c);
+int				is_flag(int c);
 
 /*
  ** -------------tmp--------------

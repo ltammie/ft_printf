@@ -2,9 +2,10 @@
 
 int 	main(void)
 {
-	printf("mine:\n");
-	ft_printf("%c\n", 15);
-	printf("orig:\n");
-	printf("%c\n", 15);
+	ft_printf("mine char: %3c\n", 'e');
+	printf("orig char: %3c\n", 'e');
+
+	ft_printf("mine str: %s\n", "boi");
+	printf("orig str: %s\n", "boi");
 	return (0);
 }

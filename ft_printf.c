@@ -20,23 +20,22 @@ int		ft_printf(const char *format, ...)
 	int 	n_chars;
 	int 	i;
 	t_cp	res;
-	va_list pr;
+	va_list ap;
 
 	n_chars = 0;
 	i = 0;
-	va_start(pr, format);
+	va_start(ap, format);
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
 			res = ft_parse(format, ++i);
-//			print_struct(res);
-
+			pr(res, ap);
 			i += res.length;
 		}
 		ft_putchar(format[i]);
 		i++;
 	}
-	va_end(pr);
+	va_end(ap);
 	return (n_chars);
 }

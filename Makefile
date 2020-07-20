@@ -12,6 +12,8 @@ SRCS = ft_printf.c\
 		parse_type.c\
 		parse_width.c\
 		pr.c\
+		c_pr.c\
+		s_pr.c\
 		utils.c
 INC = includes/ft_printf.h
 OBJS = $(SRCS:.c=.o)
