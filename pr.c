@@ -18,9 +18,20 @@ static void check_asterisk(t_cp *parsed_str, va_list ap)
 	}
 }
 
+static void check_flags(t_cp *parsed_str)
+{
+	if (parsed_str->plus_flag == 1 && parsed_str->space_flag == 1)
+		parsed_str->space_flag = 0;
+	if (parsed_str->precision >= 0 && ft_char_int_str("diouxX\0", parsed_str->arg_type))
+		parsed_str->zero_flag = 0;
+	if (parsed_str->minus_flag == 1 && parsed_str->zero_flag == 1)
+		parsed_str->zero_flag = 0;
+}
+
 int 	pr(t_cp *parsed_str, va_list ap)
 {
 	check_asterisk(parsed_str, ap);
+	check_flags(parsed_str);
 	if (parsed_str->arg_type == 'c')
 		c_pr(parsed_str, ap);
 	if (parsed_str->arg_type == 's')

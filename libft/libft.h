@@ -150,4 +150,7 @@ int					ft_iscntrl(int c);
 int					ft_count_words(char const *s, char c);
 
 char				*ft_utoa(unsigned int n);
+
+int					ft_char_int_str(const char *str, int c);
+
 #endif
