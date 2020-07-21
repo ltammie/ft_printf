@@ -27,5 +27,7 @@ int 	pr(t_cp *parsed_str, va_list ap)
 		s_pr(parsed_str, ap);
 	if (parsed_str->arg_type == '%')
 		percent_pr(parsed_str);
+	if (parsed_str->arg_type == 'u')
+		u_pr(parsed_str, ap);
 	return (0);
 }

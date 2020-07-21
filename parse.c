@@ -37,7 +37,7 @@ t_cp	*ft_parse(const char *str, int index)
 //	printf("index after precision = %d\n", index);
 
 	parse_type(str, index, res);
-
+//	print_struct(res);
 
 	return (res);
 }

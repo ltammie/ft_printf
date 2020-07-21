@@ -20,12 +20,12 @@ int		is_flag(int c)
 	return (0);
 }
 
-void	print_width(int width)
+void	print_width(int width, char pad)
 {
 	int i;
 
-	i = 0;
+	i = -1;
 	while (++i < width)
-		ft_putchar(' ');
+		ft_putchar(pad);
 
 }
