@@ -2,7 +2,7 @@
 
 int 	main(void)
 {
-	ft_printf("mine str|%*.000000003s\n", -5, "cake");
-	printf("orig str|%*.000000003s\n", -5, "cake");
+	ft_printf("mine str|%*.*%|%+# 0-*.1s\n", -10, -3, 3, "ez");
+	printf("orig str|%*.*%|%-*.1s\n", -10, -3, 3, "ez");
 	return (0);
 }

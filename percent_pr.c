@@ -1,19 +1,16 @@
 #include "includes/ft_printf.h"
 
-int			c_pr(t_cp *z, va_list ap)
+int			percent_pr(t_cp *z)
 {
-	char c;
-
-	c = va_arg(ap, int);
 	if (z->minus_flag == 1)
 	{
-		ft_putchar(c);
+		ft_putchar('%');
 		print_width(z->width);
 	}
 	else
 	{
 		print_width(z->width);
-		ft_putchar(c);
+		ft_putchar('%');
 	}
 	return (0);
 }

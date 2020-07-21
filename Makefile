@@ -14,6 +14,7 @@ SRCS = ft_printf.c\
 		pr.c\
 		c_pr.c\
 		s_pr.c\
+		percent_pr.c\
 		utils.c
 INC = includes/ft_printf.h
 OBJS = $(SRCS:.c=.o)

@@ -19,3 +19,13 @@ int		is_flag(int c)
 		return (1);
 	return (0);
 }
+
+void	print_width(int width)
+{
+	int i;
+
+	i = 0;
+	while (++i < width)
+		ft_putchar(' ');
+
+}

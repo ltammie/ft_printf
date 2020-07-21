@@ -51,6 +51,8 @@ void			parse_type(const char *str, int index, t_cp *z);
 int				pr(t_cp *parsed_str, va_list ap);
 int				c_pr(t_cp *z, va_list ap);
 int				s_pr(t_cp *z, va_list ap);
+int				percent_pr(t_cp *z);
+
 
 
 
@@ -61,6 +63,8 @@ int				s_pr(t_cp *z, va_list ap);
 
 int				get_nbr_length(int nbr);
 int				is_flag(int c);
+void			print_width(int width);
+
 
 /*
  ** -------------tmp--------------
