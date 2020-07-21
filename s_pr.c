@@ -13,12 +13,14 @@ static void print_width(int width)
 int			s_pr(t_cp z, va_list ap)
 {
 	char	*s;
-	size_t	len;
+	int		len;
 
 	s = va_arg(ap, char *);
 	if (!s)
 		s = "(null)";
-	s[z.precision] = '\0';
+	len = (int)ft_strlen(s);
+	z.precision = z.precision < len ? z.precision : len;
+	s = ft_strsub(s, 0, z.precision);
 	len = ft_strlen(s);
 	if (z.minus_flag == 1)
 	{
