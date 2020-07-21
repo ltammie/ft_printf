@@ -10,19 +10,19 @@ static void print_width(int width)
 
 }
 
-int			c_pr(t_cp z, va_list ap)
+int			c_pr(t_cp *z, va_list ap)
 {
 	char c;
 
 	c = va_arg(ap, int);
-	if (z.minus_flag == 1)
+	if (z->minus_flag == 1)
 	{
 		ft_putchar(c);
-		print_width(z.width);
+		print_width(z->width);
 	}
 	else
 	{
-		print_width(z.width);
+		print_width(z->width);
 		ft_putchar(c);
 	}
 	return (0);

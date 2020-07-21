@@ -13,7 +13,7 @@ int 	parse_flags(const char *str, int index, t_cp *z)
 		if (str[index] == ' ')
 			z->space_flag = 1;
 		if (str[index] == '#')
-			z->hashtag_flag = 1;
+			z->hash_flag = 1;
 		index++;
 		z->length++;
 	}
