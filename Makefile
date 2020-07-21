@@ -5,7 +5,6 @@ GCC = gcc $(FLAGS)
 FLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
 SRCS = ft_printf.c\
-		int_pr.c\
 		parse.c\
 		parse_flags.c\
 		parse_precision.c\
