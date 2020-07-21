@@ -2,8 +2,8 @@
 *.o
 *.out
 *.a
+.DC_STORE
 cmake-build-debug
 .idea
 *.gch
-pft/
 pft/

@@ -15,13 +15,16 @@ int 	parse_precision(const char *str, int index, t_cp *z)
 			return (index + 1);
 		}
 		z->precision = ft_atoi(&str[index]);
-		z->length += get_nbr_length(z->precision);
-		index += get_nbr_length(z->precision);
 		if (z->precision < 0)
 		{
 			z->length++;
 			index++;
 			z->precision = -1;
+		}
+		while (ft_isdigit(str[index]))
+		{
+			z->length++;
+			index++;
 		}
 	}
 	return (index);

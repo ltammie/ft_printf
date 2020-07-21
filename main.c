@@ -2,10 +2,7 @@
 
 int 	main(void)
 {
-//	ft_printf("mine char|%3c\n", 'e');
-//	printf("orig char|%3c\n", 'e');
-
-	ft_printf("mine str|%*.*s\n", -5, -3, "cake");
-	printf("orig str|%*.*s\n", -5, -3, "cake");
+	ft_printf("mine str|%*.000000003s\n", -5, "cake");
+	printf("orig str|%*.000000003s\n", -5, "cake");
 	return (0);
 }
