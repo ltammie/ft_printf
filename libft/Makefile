@@ -70,7 +70,8 @@ SRCS = ft_atoi.c\
 		ft_char_in_str.c\
 		ft_abs.c\
 		ft_itoa_base.c\
-		ft_utoa_base.c\
+		ft_utoa_base.c
+
 INC = libft.h
 OBJ = $(SRCS:.c=.o)
 
