@@ -16,7 +16,10 @@ SRCS = ft_printf.c\
 		s_pr.c\
 		percent_pr.c\
 		uoxX_pr.c\
+		di_pr.c\
 		utils.c
+
+
 INC = includes/ft_printf.h
 OBJS = $(SRCS:.c=.o)
 LIB = -L libft -lft

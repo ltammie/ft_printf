@@ -40,5 +40,7 @@ int 	pr(t_cp *parsed_str, va_list ap)
 		percent_pr(parsed_str);
 	if (ft_char_int_str("ouxX\0", parsed_str->arg_type))
 		u_pr(parsed_str, ap);
+	if (parsed_str->arg_type == 'd' || parsed_str->arg_type == 'i')
+		di_pr(parsed_str, ap);
 	return (0);
 }
