@@ -5,6 +5,8 @@ static int		nbr_length(unsigned int n)
 	int size;
 
 	size = 0;
+	if (n == 0)
+		return (size + 1);
 	while (n != 0)
 	{
 		n = n / 10;
