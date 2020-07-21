@@ -158,4 +158,7 @@ char				*ft_itoa_base(int value, int base);
 char				*ft_utoa(unsigned int n);
 
 char				*ft_utoa_base(unsigned int value, int base);
+
+char 				*ft_str_to_lower(const char *str);
+
 #endif
