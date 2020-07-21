@@ -1,7 +1,5 @@
 #include "includes/ft_printf.h"
 
-//what if there is 0 precision provided?
-
 int 	parse_precision(const char *str, int index, t_cp *z)
 {
 	if (str[index] == '.')
