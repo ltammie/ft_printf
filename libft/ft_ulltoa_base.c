@@ -1,6 +1,6 @@
 #include "libft.h"
 
-static int	get_size(unsigned int value, int base)
+static int	get_size(unsigned long long value, int base)
 {
 	int		size;
 

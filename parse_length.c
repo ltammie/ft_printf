@@ -17,6 +17,7 @@ int 	parse_length(const char *str, int index, t_cp *z)
 			z->l_flag = 1;
 		}
 		index++;
+		z->length++;
 	}
 	return (index);
 }
