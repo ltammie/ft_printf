@@ -20,6 +20,15 @@ int		is_flag(int c)
 	return (0);
 }
 
+int		get_base(char type)
+{
+	if (type == 'u')
+		return (10);
+	if (type == 'o')
+		return (8);
+	return (16);
+}
+
 void	print_width(int width, char pad)
 {
 	int i;

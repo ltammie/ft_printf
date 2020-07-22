@@ -11,7 +11,8 @@ int 	main(void)
 //	unsigned short us;
 //
 //	us = 10;
-	ft_printf("m|%5u\n", 12);
-	printf("o|%5u\n", 12);
+	printf("o|%#037lX\n", 22337203685477ul);
+	ft_printf("m|%#037l\nX", 22337203685477ul);
+
 	return (0);
 }
