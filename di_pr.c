@@ -2,6 +2,13 @@
 
 static void print_arg(t_cp *z, char *s, int len)
 {
+	if (s[0] == '-')
+	{
+		s = ft_strsub(s, 1, len - 1);
+		ft_putchar('-');
+	}
+	if (z->plus_flag == 1)
+		ft_putchar('+');
 	if (z->precision >= 0)
 		print_width(z->precision - len, '0');
 	ft_putstr(s);
@@ -33,6 +40,10 @@ int			di_pr(t_cp *z, va_list ap)
 		return (0);
 	}
 	len = (int)ft_strlen(s);
+	if (z->plus_flag == 1 && s[0] != '-')
+		z->width--;
+	if (s[0] == '-')
+		z->plus_flag = 0;
 	print_min_flag(z, s, len);
 	return (0);
 }
