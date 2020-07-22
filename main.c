@@ -11,7 +11,7 @@ int 	main(void)
 	unsigned short us;
 
 	us = 10;
-	ft_printf("mine str|%hu\n", us);
-	printf("orig str|%10hu\n", us);
+	ft_printf("mine str|%%\n");
+	printf("orig str|%%\n");
 	return (0);
 }
