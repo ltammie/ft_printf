@@ -60,7 +60,7 @@ int			u_pr(t_cp *z, va_list ap)
 	int				len;
 	int 			zero_value_flag;
 
-	s = ft_utoa_base(va_arg(ap, unsigned int), get_base(z->arg_type));
+	s = ft_utoa_base(u_cast(z, ap), get_base(z->arg_type));
 	if (z->arg_type == 'x')
 		s = ft_str_to_lower(s);
 	len = (int)ft_strlen(s);

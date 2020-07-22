@@ -36,6 +36,8 @@ int 	pr(t_cp *parsed_str, va_list ap)
 		c_pr(parsed_str, ap);
 	if (parsed_str->arg_type == 's')
 		s_pr(parsed_str, ap);
+	if (parsed_str->arg_type == 'p')
+		pointer_pr(parsed_str, ap);
 	if (parsed_str->arg_type == '%')
 		percent_pr(parsed_str);
 	if (ft_char_int_str("ouxX\0", parsed_str->arg_type))

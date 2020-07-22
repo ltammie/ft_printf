@@ -15,6 +15,10 @@ void		print_struct(t_cp *res)
 	printf("length = %d\n", res->length);
 	printf("ast_w = %d\n", res->ast_w);
 	printf("ast_p = %d\n", res->ast_p);
+	printf("h_flag = %d\n", res->h_flag);
+	printf("hh_flag = %d\n", res->hh_flag);
+	printf("l_flag = %d\n", res->l_flag);
+	printf("ll_flag = %d\n", res->ll_flag);
 }
 
 int		ft_printf(const char *format, ...)

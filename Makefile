@@ -10,6 +10,7 @@ SRCS = ft_printf.c\
 		parse_precision.c\
 		parse_type.c\
 		parse_width.c\
+		parse_length.c\
 		pr.c\
 		c_pr.c\
 		s_pr.c\
@@ -17,7 +18,8 @@ SRCS = ft_printf.c\
 		uoxX_pr.c\
 		di_pr.c\
 		pointer_pr.c\
-		utils.c
+		utils.c\
+		u_cast.c
 
 
 INC = includes/ft_printf.h
