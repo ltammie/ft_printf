@@ -54,6 +54,7 @@ int				s_pr(t_cp *z, va_list ap);
 int				percent_pr(t_cp *z);
 int				u_pr(t_cp *z, va_list ap);
 int				di_pr(t_cp *z, va_list ap);
+int				pointer_pr(t_cp *z, va_list ap);
 
 /*
  ** ------------utils----------------

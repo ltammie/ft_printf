@@ -16,6 +16,7 @@ SRCS = ft_printf.c\
 		percent_pr.c\
 		uoxX_pr.c\
 		di_pr.c\
+		pointer_pr.c\
 		utils.c
 
 

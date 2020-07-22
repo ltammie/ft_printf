@@ -8,7 +8,10 @@ int 	main(void)
 //	ft_printf("mine str|%-20.3s\n", "abcde");
 //	printf("orig str|%-20.3s\n", "abcde");
 
-	ft_printf("mine str|%07d\n", -54);
-	printf("orig str|%07d\n", -54);
+	unsigned short us;
+
+	us = 10;
+	ft_printf("mine str|%hu\n", us);
+	printf("orig str|%10hu\n", us);
 	return (0);
 }
