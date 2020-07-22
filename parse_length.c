@@ -2,7 +2,7 @@
 
 int 	parse_length(const char *str, int index, t_cp *z)
 {
-	while (ft_char_int_str("uoxXdif\0" , str[index]) != 1)
+	while (ft_char_int_str("%cspuoxXdif\0" , str[index]) != 1)
 	{
 		if (str[index] == 'h')
 		{

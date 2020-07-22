@@ -10,11 +10,11 @@ static int	get_size(unsigned int value, int base)
 	return (size + 1);
 }
 
-char		*ft_utoa_base(unsigned int value, int base)
+char		*ft_ulltoa_base(unsigned long long value, int base)
 {
-	char			*str;
-	int				size;
-	char			*tab;
+	char				*str;
+	int					size;
+	char				*tab;
 
 	size = 0;
 	tab = "0123456789ABCDEF";

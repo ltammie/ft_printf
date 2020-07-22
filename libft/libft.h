@@ -159,6 +159,8 @@ char				*ft_utoa(unsigned int n);
 
 char				*ft_utoa_base(unsigned int value, int base);
 
+char				*ft_ulltoa_base(unsigned long long value, int base);
+
 char 				*ft_str_to_lower(const char *str);
 
 #endif
