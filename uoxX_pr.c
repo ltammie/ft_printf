@@ -1,23 +1,17 @@
 #include "includes/ft_printf.h"
 
-static void print_arg(t_cp *z, char *s, int len)
-{
-	if (z->precision >= 0)
-		print_width(z->precision - len, '0');
-	ft_putstr(s);
-}
-
 static void print_min_flag(t_cp *z, char *s, int len)
 {
+	len = ft_strlen(s);
 	if (z->minus_flag == 1)
 	{
-		print_arg(z, s, len);
-		print_width(z->precision > len ?  z->width - z->precision : z->width - len, ' ');
+		ft_putstr(s);
+		print_width(z->width - len, ' ');
 	}
 	else
 	{
-		print_width(z->precision > len ?  z->width - z->precision : z->width - len, z->zero_flag ? '0' : ' ');
-		print_arg(z, s, len);
+		print_width(z->width - len, z->zero_flag ? '0' : ' ');
+		ft_putstr(s);
 	}
 }
 
@@ -30,25 +24,57 @@ static int get_base(char type)
 	return (16);
 }
 
+char *add_prefix(t_cp *z, char *str)
+{
+	if (z->hash_flag == 1 && z->arg_type == 'o')
+		if (str[0] != '0')
+			str = ft_strjoin("0", str);
+	if (z->hash_flag == 1 && z->arg_type == 'x')
+		str = ft_strjoin("0x", str);
+	if (z->hash_flag == 1 && z->arg_type == 'X')
+		str = ft_strjoin("0X", str);
+	return (str);
+}
+
+static void print_0p_0v(char *s, t_cp *z, int len)
+{
+	s = ft_strdup("");
+	s = add_prefix(z, s);
+	len = (int)ft_strlen(s);
+	if (z->minus_flag == 1)
+	{
+		ft_putstr(s);
+		print_width(z->width - len, ' ');
+	}
+	else
+	{
+		print_width(z->width - len, z->zero_flag ? '0' : ' ');
+		ft_putstr(s);
+	}
+}
+
 int			u_pr(t_cp *z, va_list ap)
 {
 	char			*s;
+	char 			*tmp;
 	int				len;
 
 	s = ft_utoa_base(va_arg(ap, unsigned int), get_base(z->arg_type));
 	if (z->arg_type == 'x')
 		s = ft_str_to_lower(s);
-	if (ft_strcmp(s, "4294964940") == 0)
-	{
-		ft_putstr(s);
-		return (0);
-	}
+	len = (int)ft_strlen(s);
 	if (ft_strcmp(s, "0") == 0 && z->precision == 0)
 	{
-		z->width > 0 ? print_width(z->width, ' ') : ft_putstr("");
+		print_0p_0v(s, z, len);
 		return (0);
 	}
-	len = (int)ft_strlen(s);
+	if (len < z->precision)
+	{
+		tmp = (char *)malloc(sizeof(char) * (z->precision - len));
+		s = ft_strjoin(ft_memset(tmp, '0', z->precision - len), s);
+		free(tmp);
+	}
+	s = add_prefix(z, s);
 	print_min_flag(z, s, len);
 	return (0);
 }
