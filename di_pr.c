@@ -2,10 +2,11 @@
 
 static void print_min_flag(t_cp *z, char *s, char *sign)
 {
-
 	if (z->minus_flag == 1)
 	{
 		s = ft_strjoin(sign, s);
+		if (((s[0] != '-' && s[0] != '+') || ft_strlen(s) == 0) && z->space_flag == 1)
+			s = ft_strjoin(" ", s);
 		ft_putstr(s);
 		print_width(z->width - ft_strlen(s), ' ');
 	}
@@ -14,12 +15,16 @@ static void print_min_flag(t_cp *z, char *s, char *sign)
 		if (z->precision == -1 && z->zero_flag == 1)
 		{
 			ft_putstr(sign);
+			if (((s[0] != '-' && s[0] != '+') || ft_strlen(s) == 0) && z->space_flag == 1)
+				s = ft_strjoin(" ", s);
 			print_width(z->width - ft_strlen(s) - ft_strlen(sign), '0');
 			ft_putstr(s);
 		}
 		else
 		{
 			s = ft_strjoin(sign, s);
+			if (((s[0] != '-' && s[0] != '+') || ft_strlen(s) == 0) && z->space_flag == 1)
+				s = ft_strjoin(" ", s);
 			print_width(z->width - ft_strlen(s), z->zero_flag ? '0' : ' ');
 			ft_putstr(s);
 		}
@@ -33,7 +38,7 @@ int			di_pr(t_cp *z, va_list ap)
 	char 			*sign;
 	int				len;
 
-	s = ft_itoa(va_arg(ap, int));
+	s = ft_lltoa(cast_di(z, ap));
 	sign = ft_strdup("");
 	if (z->plus_flag == 1)
 		sign = ft_strdup("+");
