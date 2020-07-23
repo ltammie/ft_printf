@@ -19,7 +19,7 @@ SRCS = ft_printf.c\
 		di_pr.c\
 		pointer_pr.c\
 		utils.c\
-		u_cast.c
+		cast.c
 
 
 INC = includes/ft_printf.h

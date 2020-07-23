@@ -163,4 +163,6 @@ char				*ft_ulltoa_base(unsigned long long value, int base);
 
 char 				*ft_str_to_lower(const char *str);
 
+char				*ft_lltoa(long long n);
+
 #endif

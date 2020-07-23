@@ -85,7 +85,7 @@ int			u_pr(t_cp *z, va_list ap)
 	if (len < z->precision)
 	{
 		tmp = (char *)malloc(sizeof(char) * (z->precision - len));
-		s = ft_strjoin(ft_memset(tmp, '0', z->precision - len), s);
+		s = ft_strjoin((char*)ft_memset(tmp, '0', z->precision - len), s);
 		free(tmp);
 	}
 	if (z->precision == -1 && z->zero_flag == 1)

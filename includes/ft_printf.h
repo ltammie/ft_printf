@@ -69,6 +69,7 @@ int					get_nbr_length(int nbr);
 int					is_flag(int c);
 void				print_width(int width, char pad);
 unsigned long long	u_cast(t_cp *z, va_list ap);
+long long			cast_di(t_cp *z, va_list ap);
 int					get_base(char type);
 
 /*
