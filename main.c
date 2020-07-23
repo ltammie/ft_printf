@@ -8,11 +8,11 @@ int 	main(void)
 //	ft_printf("mine str|%s\n", "abcde");
 //	printf("orig str|%s\n", "abcde");
 
-//	unsigned short us;
-//
-//	us = 10;
-	printf("o|%+010.d\n", -43);
-	ft_printf("m|%+010.d\n", -43);
+	unsigned short us;
+
+	us = 10;
+	printf("o|%30p\n", &us);
+	ft_printf("m|%30p\n", &us);
 
 	return (0);
 }
