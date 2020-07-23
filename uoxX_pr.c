@@ -55,10 +55,10 @@ static void print_0p_0f(char *s, t_cp *z, int len, int flag)
 		fix_len = z->arg_type == 'o'? 1 : 0;
 		fix_len = ft_char_int_str("xX\0", z->arg_type) == 1 ? 2 : fix_len;
 	}
-	if (z->width > len + fix_len)
+	if (z->width > (len + fix_len))
 	{
-		tmp = (char *) malloc(sizeof(char) * (z->width - len - fix_len));
-		s = ft_strjoin(ft_memset(tmp, '0', z->width - len - fix_len), s);
+		tmp = (char *)malloc(sizeof(char) * (z->width - len - fix_len));
+		s = ft_strjoin(ft_memset(tmp, '0', (size_t)(z->width - len - fix_len)), s);
 		free(tmp);
 	}
 	s = add_prefix(z, s, flag);
