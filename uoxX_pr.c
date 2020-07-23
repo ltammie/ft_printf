@@ -50,15 +50,15 @@ static void print_0p_0f(char *s, t_cp *z, int len, int flag)
 	int 	fix_len;
 
 	fix_len = 0;
-	if (z->hash_flag == 1)
+	if (z->hash_flag == 1 && flag == 0)
 	{
 		fix_len = z->arg_type == 'o'? 1 : 0;
 		fix_len = ft_char_int_str("xX\0", z->arg_type) == 1 ? 2 : fix_len;
 	}
 	if (z->width > (len + fix_len))
 	{
-		tmp = (char *)malloc(sizeof(char) * (z->width - len - fix_len));
-		s = ft_strjoin(ft_memset(tmp, '0', (size_t)(z->width - len - fix_len)), s);
+		tmp = ft_fill_str('0', z->width - len - fix_len);
+		s = ft_strjoin(tmp, s);
 		free(tmp);
 	}
 	s = add_prefix(z, s, flag);
@@ -79,13 +79,14 @@ int			u_pr(t_cp *z, va_list ap)
 	zero_value_flag = ft_strcmp(s, "0") == 0 ? 1 : 0;
 	if (ft_strcmp(s, "0") == 0 && z->precision == 0)
 	{
+
 		print_0p_0v(s, z, len, zero_value_flag);
 		return (0);
 	}
 	if (len < z->precision)
 	{
-		tmp = (char *)malloc(sizeof(char) * (z->precision - len));
-		s = ft_strjoin((char*)ft_memset(tmp, '0', z->precision - len), s);
+		tmp = ft_fill_str('0', z->precision - len);
+		s = ft_strjoin(tmp, s);
 		free(tmp);
 	}
 	if (z->precision == -1 && z->zero_flag == 1)
@@ -93,6 +94,7 @@ int			u_pr(t_cp *z, va_list ap)
 		print_0p_0f(s, z, len, zero_value_flag);
 		return (0);
 	}
+
 	s = add_prefix(z, s, zero_value_flag);
 	print_min_flag(z, s, len);
 	return (0);

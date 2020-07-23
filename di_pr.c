@@ -16,7 +16,7 @@ static void print_min_flag(t_cp *z, char *s, char *sign)
 		{
 			ft_putstr(sign);
 			if (((s[0] != '-' && s[0] != '+') || ft_strlen(s) == 0) && z->space_flag == 1)
-				s = ft_strjoin(" ", s);
+				ft_putchar(' ');
 			print_width(z->width - ft_strlen(s) - ft_strlen(sign), '0');
 			ft_putstr(s);
 		}
@@ -24,7 +24,7 @@ static void print_min_flag(t_cp *z, char *s, char *sign)
 		{
 			s = ft_strjoin(sign, s);
 			if (((s[0] != '-' && s[0] != '+') || ft_strlen(s) == 0) && z->space_flag == 1)
-				s = ft_strjoin(" ", s);
+				ft_putchar(' ');
 			print_width(z->width - ft_strlen(s), z->zero_flag ? '0' : ' ');
 			ft_putstr(s);
 		}

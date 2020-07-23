@@ -38,3 +38,19 @@ void	print_width(int width, char pad)
 		ft_putchar(pad);
 
 }
+
+char	*ft_fill_str(char c, int len)
+{
+	char *str;
+	int i;
+
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	i = 0;
+	while (i < len)
+	{
+		str[i] = c;
+		i++;
+	}
+	str[len] = '\0';
+	return (str);
+}

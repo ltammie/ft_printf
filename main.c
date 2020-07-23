@@ -11,8 +11,8 @@ int 	main(void)
 //	unsigned short us;
 //
 //	us = 10;
-	printf("o|%#03x\n", 0);
-	ft_printf("m|%#03x\n", 0);
+	printf("o|%#03o\n", 0);
+	ft_printf("m|%#03o\n", 0);
 
 	return (0);
 }
