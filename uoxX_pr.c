@@ -1,20 +1,5 @@
 #include "includes/ft_printf.h"
 
-static void print_min_flag(t_cp *z, char *s, int len)
-{
-	len = (int)ft_strlen(s);
-	if (z->minus_flag == 1)
-	{
-		ft_putstr(s);
-		print_width(z->width - len, ' ');
-	}
-	else
-	{
-		print_width(z->width - len, z->zero_flag ? '0' : ' ');
-		ft_putstr(s);
-	}
-}
-
 static char *add_prefix(t_cp *z, char *str, int flag)
 {
 	if (z->hash_flag == 1 && z->arg_type == 'o')
@@ -27,19 +12,37 @@ static char *add_prefix(t_cp *z, char *str, int flag)
 	return (str);
 }
 
+static void print_min_flag(t_cp *z, char *s, int len, int flag)
+{
+	s = add_prefix(z, s, flag);
+	len = (int)ft_strlen(s);
+	z->n_chars += len;
+	if (z->minus_flag == 1)
+	{
+		ft_putstr(s);
+		z->n_chars += print_width(z->width - len, ' ');
+	}
+	else
+	{
+		z->n_chars += print_width(z->width - len, z->zero_flag ? '0' : ' ');
+		ft_putstr(s);
+	}
+}
+
 static void print_0p_0v(char *s, t_cp *z, int len, int flag)
 {
 	s = ft_strdup("");
 	s = add_prefix(z, s, flag);
 	len = (int)ft_strlen(s);
+	z->n_chars += len;
 	if (z->minus_flag == 1)
 	{
 		ft_putstr(s);
-		print_width(z->width - len, ' ');
+		z->n_chars += print_width(z->width - len, ' ');
 	}
 	else
 	{
-		print_width(z->width - len, z->zero_flag ? '0' : ' ');
+		z->n_chars += print_width(z->width - len, z->zero_flag ? '0' : ' ');
 		ft_putstr(s);
 	}
 }
@@ -63,9 +66,10 @@ static void print_0p_0f(char *s, t_cp *z, int len, int flag)
 	}
 	s = add_prefix(z, s, flag);
 	ft_putstr(s);
+	z->n_chars += ft_strlen(s);
 }
 
-int			u_pr(t_cp *z, va_list ap)
+void		uoxX_pr(t_cp *z, va_list ap)
 {
 	char			*s;
 	char 			*tmp;
@@ -78,24 +82,18 @@ int			u_pr(t_cp *z, va_list ap)
 	len = (int)ft_strlen(s);
 	zero_value_flag = ft_strcmp(s, "0") == 0 ? 1 : 0;
 	if (ft_strcmp(s, "0") == 0 && z->precision == 0)
-	{
-
 		print_0p_0v(s, z, len, zero_value_flag);
-		return (0);
-	}
-	if (len < z->precision)
+	else
 	{
-		tmp = ft_fill_str('0', z->precision - len);
-		s = ft_strjoin(tmp, s);
-		free(tmp);
+		if (len < z->precision)
+		{
+			tmp = ft_fill_str('0', z->precision - len);
+			s = ft_strjoin(tmp, s);
+			free(tmp);
+		}
+		if (z->precision == -1 && z->zero_flag == 1)
+			print_0p_0f(s, z, len, zero_value_flag);
+		else
+			print_min_flag(z, s, len, zero_value_flag);
 	}
-	if (z->precision == -1 && z->zero_flag == 1)
-	{
-		print_0p_0f(s, z, len, zero_value_flag);
-		return (0);
-	}
-
-	s = add_prefix(z, s, zero_value_flag);
-	print_min_flag(z, s, len);
-	return (0);
 }

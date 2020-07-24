@@ -36,7 +36,7 @@ int		ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			res = ft_parse(format, ++i);
-			pr(res, ap);
+			n_chars += pr(res, ap);
 			i += res->length;
 			free(res);
 		}
@@ -44,6 +44,7 @@ int		ft_printf(const char *format, ...)
 		{
 			ft_putchar(format[i]);
 			i++;
+			n_chars ++;
 		}
 	}
 	va_end(ap);

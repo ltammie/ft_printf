@@ -22,6 +22,7 @@ typedef struct		s_cp
 	int 			space_flag;
 	int				width;
 	int 			precision;
+	int 			precision_flag;
 	char			arg_type;
 	int				length;
 	int 			ast_w;
@@ -30,6 +31,7 @@ typedef struct		s_cp
 	int 			hh_flag;
 	int 			l_flag;
 	int 			ll_flag;
+	int				n_chars;
 }					t_cp;
 
 /*
@@ -54,12 +56,12 @@ void				parse_type(const char *str, int index, t_cp *z);
  */
 
 int					pr(t_cp *parsed_str, va_list ap);
-int					c_pr(t_cp *z, va_list ap);
-int					s_pr(t_cp *z, va_list ap);
-int					percent_pr(t_cp *z);
-int					u_pr(t_cp *z, va_list ap);
-int					di_pr(t_cp *z, va_list ap);
-int					pointer_pr(t_cp *z, va_list ap);
+void				c_pr(t_cp *z, va_list ap);
+void				s_pr(t_cp *z, va_list ap);
+void				percent_pr(t_cp *z);
+void				uoxX_pr(t_cp *z, va_list ap);
+void				di_pr(t_cp *z, va_list ap);
+void				pointer_pr(t_cp *z, va_list ap);
 
 /*
  ** ------------utils----------------
@@ -67,7 +69,7 @@ int					pointer_pr(t_cp *z, va_list ap);
 
 int					get_nbr_length(int nbr);
 int					is_flag(int c);
-void				print_width(int width, char pad);
+int					print_width(int width, char pad);
 unsigned long long	u_cast(t_cp *z, va_list ap);
 long long			cast_di(t_cp *z, va_list ap);
 int					get_base(char type);

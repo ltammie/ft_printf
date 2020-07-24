@@ -1,7 +1,7 @@
 .DEFAULT_GOAL: all
 .PHONY: all clean fclean re debug
 
-GCC = gcc $(FLAGS)
+GCC = clang $(FLAGS)
 FLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
 SRCS = ft_printf.c\
@@ -65,8 +65,8 @@ re: fclean all
 
 debug: all
 		@echo "$(DEBUG)Building test version.$(YELLOW)"
-		$(GCC) -c main.c -I $(INC)
-		$(GCC) -o $(DEBUG_NAME) main.o $(NAME) libft/libft.a
+		clang -c main.c -I $(INC)
+		clang -o $(DEBUG_NAME) main.o $(NAME) libft/libft.a
 		@echo "$(DEBUG)Test building successful!$(STANDART)"
 dclean:
 		@echo "$(RED)Test version delete.$(YELLOW)"

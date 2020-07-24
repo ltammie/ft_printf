@@ -6,6 +6,7 @@ int 	parse_precision(const char *str, int index, t_cp *z)
 	{
 		index++;
 		z->length++;
+		z->precision_flag = 1;
 		if (str[index] == '*')
 		{
 			z->ast_p = 1;

@@ -1,16 +1,17 @@
 #include "includes/ft_printf.h"
 
-int			percent_pr(t_cp *z)
+void		percent_pr(t_cp *z)
 {
 	if (z->minus_flag == 1)
 	{
 		ft_putchar('%');
-		print_width(z->width - 1, z->zero_flag == 1 ? '0' : ' ');
+		z->n_chars++;
+		z->n_chars += print_width(z->width - 1, z->zero_flag == 1 ? '0' : ' ');
 	}
 	else
 	{
-		print_width(z->width - 1, z->zero_flag == 1 ? '0' : ' ');
+		z->n_chars += print_width(z->width - 1, z->zero_flag == 1 ? '0' : ' ');
 		ft_putchar('%');
+		z->n_chars++;
 	}
-	return (0);
 }

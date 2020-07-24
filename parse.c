@@ -12,7 +12,8 @@ static t_cp *ft_new_t_cp(void)
 	new_t_cp->space_flag = 0;
 	new_t_cp->width = 0;
 	new_t_cp->precision = -1;
-	new_t_cp->arg_type = 'z'; //change later
+	new_t_cp->precision_flag = 0;
+	new_t_cp->arg_type = 'z';
 	new_t_cp->length = 0;
 	new_t_cp->ast_w = 0;
 	new_t_cp->ast_p = 0;
@@ -20,6 +21,7 @@ static t_cp *ft_new_t_cp(void)
 	new_t_cp->hh_flag = 0;
 	new_t_cp->l_flag = 0;
 	new_t_cp->ll_flag = 0;
+	new_t_cp->n_chars = 0;
 	return (new_t_cp);
 }
 

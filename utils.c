@@ -29,13 +29,14 @@ int		get_base(char type)
 	return (16);
 }
 
-void	print_width(int width, char pad)
+int	print_width(int width, char pad)
 {
 	int i;
 
 	i = -1;
 	while (++i < width)
 		ft_putchar(pad);
+	return (i);
 
 }
 
@@ -44,6 +45,8 @@ char	*ft_fill_str(char c, int len)
 	char *str;
 	int i;
 
+	if (len < 0)
+		return ("\0");
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	i = 0;
 	while (i < len)

@@ -22,7 +22,7 @@ static void check_flags(t_cp *parsed_str)
 {
 	if (parsed_str->plus_flag == 1 && parsed_str->space_flag == 1)
 		parsed_str->space_flag = 0;
-	if (parsed_str->precision >= 0 && ft_char_int_str("diouxX\0", parsed_str->arg_type))
+	if (parsed_str->precision >= 0 && ft_char_int_str("diouxXp\0", parsed_str->arg_type))
 		parsed_str->zero_flag = 0;
 	if (parsed_str->minus_flag == 1 && parsed_str->zero_flag == 1)
 		parsed_str->zero_flag = 0;
@@ -41,8 +41,8 @@ int 	pr(t_cp *parsed_str, va_list ap)
 	if (parsed_str->arg_type == '%')
 		percent_pr(parsed_str);
 	if (ft_char_int_str("ouxX\0", parsed_str->arg_type))
-		u_pr(parsed_str, ap);
+		uoxX_pr(parsed_str, ap);
 	if (parsed_str->arg_type == 'd' || parsed_str->arg_type == 'i')
 		di_pr(parsed_str, ap);
-	return (0);
+	return (parsed_str->n_chars);
 }

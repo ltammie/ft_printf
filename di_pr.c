@@ -6,7 +6,8 @@ static void print_mf(t_cp *z, char *s, char *sign)
 	if (((s[0] != '-' && s[0] != '+') || ft_strlen(s) == 0) && z->space_flag == 1)
 		s = ft_strjoin(" ", s);
 	ft_putstr(s);
-	print_width((int)(z->width - ft_strlen(s)), ' ');
+	z->n_chars += (int)ft_strlen(s);
+	z->n_chars += print_width((int)(z->width - ft_strlen(s)), ' ');
 }
 
 static void	print_0p_0f_sp(t_cp *z, char *s, char *sign)
@@ -17,11 +18,14 @@ static void	print_0p_0f_sp(t_cp *z, char *s, char *sign)
 	if (((sign[0] != '-' && sign[0] != '+') || ft_strlen(s) == 0) && z->space_flag == 1)
 	{
 		ft_putchar(' ');
+		z->n_chars++;
 		sp_flag = 1;
 	}
 	ft_putstr(sign);
-	print_width((int)(z->width - ft_strlen(s) - ft_strlen(sign) - sp_flag), '0');
+	z->n_chars += (int)ft_strlen(sign);
+	z->n_chars += print_width((int)(z->width - ft_strlen(s) - ft_strlen(sign) - sp_flag), '0');
 	ft_putstr(s);
+	z->n_chars += (int)ft_strlen(s);
 }
 
 static void print_0p_sf(t_cp *z, char *s, char *sign)
@@ -33,10 +37,12 @@ static void print_0p_sf(t_cp *z, char *s, char *sign)
 	if (((s[0] != '-' && s[0] != '+') || ft_strlen(s) == 0) && z->space_flag == 1)
 	{
 		ft_putchar(' ');
+		z->n_chars++;
 		sp_flag = 1;
 	}
-	print_width((int)(z->width - ft_strlen(s) - sp_flag), z->zero_flag ? '0' : ' ');
+	z->n_chars += print_width((int)(z->width - ft_strlen(s) - sp_flag), z->zero_flag ? '0' : ' ');
 	ft_putstr(s);
+	z->n_chars += (int)ft_strlen(s);
 }
 
 static void print_min_flag(t_cp *z, char *s, char *sign)
@@ -52,7 +58,7 @@ static void print_min_flag(t_cp *z, char *s, char *sign)
 	}
 }
 
-int			di_pr(t_cp *z, va_list ap)
+void		di_pr(t_cp *z, va_list ap)
 {
 	char			*s;
 	char 			*tmp;
@@ -78,6 +84,5 @@ int			di_pr(t_cp *z, va_list ap)
 		free(tmp);
 	}
 	print_min_flag(z, s, sign);
-	return (0);
 }
 
