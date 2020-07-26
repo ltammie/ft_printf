@@ -21,6 +21,7 @@ static t_cp *ft_new_t_cp(void)
 	new_t_cp->hh_flag = 0;
 	new_t_cp->l_flag = 0;
 	new_t_cp->ll_flag = 0;
+	new_t_cp->LM_flag = 0;
 	new_t_cp->n_chars = 0;
 	return (new_t_cp);
 }

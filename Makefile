@@ -18,7 +18,9 @@ SRCS = ft_printf.c\
 		uoxX_pr.c\
 		di_pr.c\
 		pointer_pr.c\
+		f_pr.c\
 		utils.c\
+		long_arithmetics.c\
 		cast.c
 
 

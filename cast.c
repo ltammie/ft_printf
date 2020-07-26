@@ -29,3 +29,10 @@ long long			cast_di(t_cp *z, va_list ap)
 		return ((long long)((short)va_arg(ap, int)));
 	return ((long long)va_arg(ap, int));
 }
+
+long double			cast_f(t_cp *z, va_list ap)
+{
+	if (z->LM_flag)
+		return ((long double)va_arg(ap, long double));
+	return ((long double)va_arg(ap, double));
+}

@@ -44,5 +44,7 @@ int 	pr(t_cp *parsed_str, va_list ap)
 		uoxX_pr(parsed_str, ap);
 	if (parsed_str->arg_type == 'd' || parsed_str->arg_type == 'i')
 		di_pr(parsed_str, ap);
+	if (parsed_str->arg_type == 'f')
+		f_pr(parsed_str, ap);
 	return (parsed_str->n_chars);
 }
