@@ -20,6 +20,7 @@ SRCS = ft_printf.c\
 		pointer_pr.c\
 		f_pr.c\
 		utils.c\
+		utils2.c\
 		long_arithmetics.c\
 		cast.c
 

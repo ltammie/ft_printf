@@ -12,6 +12,6 @@ int 	main(void)
 //	ft_printf("mine str|%s\n", "abcde");
 //	printf("orig str|%s\n", "abcde");
 
-	printf("o|%f\n", 343.63f);
-	ft_printf("m|%f\n", 343.63f);
+	printf("o|%f\n", 23.1f);
+	ft_printf("m|%f\n", 23.1f);
 }

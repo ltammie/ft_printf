@@ -39,6 +39,7 @@ typedef	union		u_d
 typedef struct 		s_lf
 {
 	int 			n[1000000];
+	int 			exp;
 }					t_lf;
 
 typedef struct		s_cp
@@ -112,8 +113,12 @@ char				*ft_fill_str(char c, int len);
 
 t_lf				*new_long_number();
 void				long_mul_short(int s, t_lf *l);
-t_lf				*pow2(int p);
+t_lf				*pow_long(int p, int c);
 void				long_sum_long(t_lf *a, t_lf *b);
+void				long_add_zeroes(t_lf *a, int new_exp);
+char				*long_to_str(t_lf *a);
+
+
 
 
 

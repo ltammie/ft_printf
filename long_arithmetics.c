@@ -1,6 +1,6 @@
 #include "includes/ft_printf.h"
 
-t_lf 	*new_long_number()
+t_lf 	*new_long_number(int exp)
 {
 	t_lf	*new_number;
 	int 	i;
@@ -9,6 +9,7 @@ t_lf 	*new_long_number()
 	i = -1;
 	while (++i < MAX_SIZE)
 		new_number->n[i] = 0;
+	new_number->exp = exp;
 	return (new_number);
 }
 
@@ -27,15 +28,15 @@ void	long_mul_short(int s, t_lf *l)
 	}
 }
 
-t_lf 	*pow2(int p)
+t_lf 	*pow_long(int p, int c)
 {
 	t_lf	*res;
 
-	res = new_long_number();
+	res = new_long_number(p);
 	res->n[0] = 1;
 	while (p > 0)
 	{
-		long_mul_short(2, res);
+		long_mul_short(c, res);
 		p--;
 	}
 	return (res);
@@ -48,6 +49,8 @@ void	long_sum_long(t_lf *a, t_lf *b)
 
 	i = 0;
 	remainder = 0;
+	if (a->exp < b->exp)
+		long_add_zeroes(a, b->exp);
 	while(i < MAX_SIZE)
 	{
 		remainder = remainder + a->n[i] + b->n[i];
@@ -57,6 +60,21 @@ void	long_sum_long(t_lf *a, t_lf *b)
 	}
 }
 
+void	long_add_zeroes(t_lf *a, int new_exp)
+{
+	int	i;
+	int	shift;
+
+	i = a->exp - 1;
+	shift = new_exp - a->exp;
+	while (i >= 0)
+	{
+		a->n[i + shift] = a->n[i];
+		a->n[i] = 0;
+		i--;
+	}
+	a->exp = new_exp;
+}
 
 //delete
 void	print_number(t_lf *n)
