@@ -40,6 +40,7 @@ typedef struct 		s_lf
 {
 	int 			n[1000000];
 	int 			exp;
+	int 			fraction_flag;
 }					t_lf;
 
 typedef struct		s_cp
@@ -117,6 +118,8 @@ t_lf				*pow_long(int p, int c);
 void				long_sum_long(t_lf *a, t_lf *b);
 void				long_add_zeroes(t_lf *a, int new_exp);
 char				*long_to_str(t_lf *a);
+char				*lfraction_to_str(t_lf *a);
+
 
 
 

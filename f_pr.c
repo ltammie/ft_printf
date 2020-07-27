@@ -32,7 +32,7 @@ static char 	*float_to_str(t_d d, const char *str)
 		e++;
 		i++;
 	}
-	res = ft_strjoin(ft_strjoin(long_to_str(number), "."), long_to_str(fraction));
+	res = ft_strjoin(ft_strjoin(long_to_str(number), "."), lfraction_to_str(fraction));
 	return (res);
 }
 
