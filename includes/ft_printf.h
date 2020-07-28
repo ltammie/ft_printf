@@ -119,6 +119,8 @@ void				long_sum_long(t_lf *a, t_lf *b);
 void				long_add_zeroes(t_lf *a, int new_exp);
 char				*long_to_str(t_lf *a);
 char				*lfraction_to_str(t_lf *a);
+void				long_div_two(t_lf *l);
+
 
 
 

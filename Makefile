@@ -22,6 +22,7 @@ SRCS = ft_printf.c\
 		utils.c\
 		utils2.c\
 		long_arithmetics.c\
+		long_arithmetics2.c\
 		cast.c
 
 

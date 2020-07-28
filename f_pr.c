@@ -17,6 +17,7 @@ static char 	*float_to_str(t_d d, const char *str)
 	int 		len;
 	t_lf		*number;
 	t_lf		*fraction;
+	t_lf		*tmp;
 	char 		*res;
 
 	i = 0;
@@ -26,10 +27,12 @@ static char 	*float_to_str(t_d d, const char *str)
 	len = (int)ft_strlen(str);
 	if (e > 0)
 	{
+		tmp = pow_long(e, 2);
 		while (e >= 0)
 		{
 			if (str[i] == '1')
-				long_sum_long(number, pow_long(e, 2));
+				long_sum_long(number, tmp);
+			long_div_two(tmp);
 			e--;
 			i++;
 		}

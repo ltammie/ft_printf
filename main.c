@@ -13,6 +13,6 @@ int 	main(void)
 //	ft_printf("mine str|%s\n", "abcde");
 //	printf("orig str|%s\n", "abcde");
 
-	printf("o|%.0f\n",  DBL_MAX);
-	ft_printf("m|%.0f\n", DBL_MAX);
+	printf("o|%.0Lf\n",  LDBL_MAX);
+	ft_printf("m|%.0Lf\n", LDBL_MAX);
 }
