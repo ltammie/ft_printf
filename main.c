@@ -3,6 +3,7 @@
 
 //delete
 #include <math.h>
+#include <float.h>
 
 int 	main(void)
 {
@@ -12,6 +13,6 @@ int 	main(void)
 //	ft_printf("mine str|%s\n", "abcde");
 //	printf("orig str|%s\n", "abcde");
 
-	printf("o|%.6f\n", 1201.5f);
-	ft_printf("m|%.6f\n", 1201.5f);
+	printf("o|%.0f\n", DBL_MAX);
+	ft_printf("m|%.0f\n", DBL_MAX);
 }

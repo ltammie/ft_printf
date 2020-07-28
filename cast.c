@@ -32,7 +32,7 @@ long long			cast_di(t_cp *z, va_list ap)
 
 long double			cast_f(t_cp *z, va_list ap)
 {
-	if (z->LM_flag)
+	if (z->L_flag)
 		return ((long double)va_arg(ap, long double));
 	return ((long double)va_arg(ap, double));
 }

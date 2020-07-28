@@ -27,11 +27,11 @@ typedef	union		u_f
 
 typedef	union		u_d
 {
-	double			d;
+	long double		d;
 	struct			s_ds
 	{
-		unsigned long m : 52;
-		unsigned int e : 11;
+		unsigned long m : 64;
+		unsigned int e : 15;
 		unsigned int s : 1;
 	}				t_ds;
 }					t_d;
@@ -61,7 +61,7 @@ typedef struct		s_cp
 	int 			hh_flag;
 	int 			l_flag;
 	int 			ll_flag;
-	int 			LM_flag;
+	int 			L_flag;
 	int				n_chars;
 }					t_cp;
 
