@@ -38,7 +38,7 @@ typedef	union		u_d
 
 typedef struct 		s_lf
 {
-	int 			n[1000000];
+	int 			n[MAX_SIZE];
 	int 			exp;
 	int 			fraction_flag;
 }					t_lf;

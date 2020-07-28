@@ -56,8 +56,7 @@ void			f_pr(t_cp *z, va_list ap)
 	mantissa = ft_ulltoa_base(d.t_ds.m, 2);
 	if (ft_strlen(mantissa) < 64)
 		mantissa = ft_strjoin(ft_fill_str('0', 64 - (int)ft_strlen(mantissa)), mantissa);
-	str = ft_strjoin("1", mantissa);
-	str = float_to_str(d, str);
+	str = float_to_str(d, mantissa);
 	ft_putstr(str);
 
 //	sign = ft_strdup("");

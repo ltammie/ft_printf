@@ -6,17 +6,16 @@ char 	*long_to_str(t_lf *a)
 	int j;
 	char *str;
 
-
-	if (a->n[0] == 0)
+	i = MAX_SIZE - 1;
+	j = 0;
+	while(a->n[i] == 0 && i > 0)
+		i--;
+	if (i == 0)
 	{
 		str = ft_strnew(1);
 		str[0] = '0';
 		return (str);
 	}
-	i = MAX_SIZE - 1;
-	j = 0;
-	while(a->n[i] == 0 && i > 1)
-		i--;
 	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
 	while(j <= i)
