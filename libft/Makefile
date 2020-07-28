@@ -73,7 +73,8 @@ SRCS = ft_atoi.c\
 		ft_utoa_base.c\
 		ft_ulltoa_base.c\
 		ft_str_to_lower.c\
-		ft_lltoa.c
+		ft_lltoa.c\
+		ft_ftoa.c
 
 
 INC = libft.h

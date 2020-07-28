@@ -1,7 +1,7 @@
 #ifndef FT_PRINTF_H
 #define FT_PRINTF_H
 
-#define MAX_SIZE 1000000
+#define MAX_SIZE 100000
 #include "../libft/libft.h"
 #include <stdarg.h>
 

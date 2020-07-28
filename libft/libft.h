@@ -165,4 +165,6 @@ char 				*ft_str_to_lower(const char *str);
 
 char				*ft_lltoa(long long n);
 
+char				*ft_ftoa(double n, int precision);
+
 #endif
