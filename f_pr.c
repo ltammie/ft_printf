@@ -5,7 +5,7 @@ void			f_pr(t_cp *z, va_list ap)
 	char		*str;
 
 	z->precision = z->precision == -1 ? 6 : z->precision;
-	str = ft_ftoa((double)cast_f(z, ap), z->precision);
+	str = ft_lftoa(cast_f(z, ap), z->precision);
 	ft_putstr(str);
 
 }

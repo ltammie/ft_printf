@@ -167,4 +167,6 @@ char				*ft_lltoa(long long n);
 
 char				*ft_ftoa(double n, int precision);
 
+char				*ft_lftoa(long double n, int precision);
+
 #endif
