@@ -3,11 +3,9 @@
 char 	*long_to_str(t_lf *a)
 {
 	int i;
-	int j;
 	char *str;
 
 	i = MAX_SIZE - 1;
-	j = 0;
 	while(a->n[i] == 0 && i > 0)
 		i--;
 	if (i == 0)
@@ -16,14 +14,9 @@ char 	*long_to_str(t_lf *a)
 		str[0] = '0';
 		return (str);
 	}
-	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
-		return (NULL);
-	while(j <= i)
-	{
-		str[j] = a->n[i - j] + '0';
-		j++;
-	}
-	str[j] = '\0';
+	str = ft_strnew(1);
+	while(i >= 0)
+		str = ft_strjoin(str, ft_itoa(a->n[i--]));
 	return (str);
 }
 

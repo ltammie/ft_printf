@@ -11,9 +11,9 @@ void	long_div_two(t_lf *l)
 			l->n[i] /= 2;
 		else
 		{
-			l->n[i] = l->n[i] * 10 / 2;
-			l->n[i - 1] += l->n[i] % 10;
-			l->n[i] /= 10;
+			l->n[i] = l->n[i] * BASE / 2;
+			l->n[i - 1] += l->n[i] % BASE;
+			l->n[i] /= BASE;
 		}
 	}
 }

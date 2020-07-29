@@ -19,6 +19,7 @@ static char 	*float_to_str(t_d d, const char *str)
 	t_lf		*fraction;
 	t_lf		*tmp;
 	char 		*res;
+	char		*fr_str;
 
 	i = 0;
 	e = (int)d.t_ds.e - 16383;
@@ -38,14 +39,20 @@ static char 	*float_to_str(t_d d, const char *str)
 		}
 	}
 	e *= -1;
+	tmp = pow_long(e, 5);
 	while (i < len)
 	{
 		if (str[i] == '1')
-			long_sum_long(fraction, pow_long(e, 5));
+			long_sum_long(fraction, tmp);
+		long_mul_short(5, tmp);
+		tmp->exp++;
 		e++;
 		i++;
 	}
-	res = ft_strjoin(ft_strjoin(long_to_str(number), "."), lfraction_to_str(fraction));
+	fr_str = long_to_str(fraction);
+	if ((int)ft_strlen(fr_str) < fraction->exp)
+		fr_str = ft_strjoin(ft_fill_str('0', fraction->exp - (int)ft_strlen(fr_str)), fr_str);
+	res = ft_strjoin(ft_strjoin(long_to_str(number), "."), fr_str);
 	return (res);
 }
 

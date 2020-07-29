@@ -23,8 +23,8 @@ void	long_mul_short(int s, t_lf *l)
 	i = -1;
 	while (++i < MAX_SIZE)
 	{
-		l->n[i + 1] = l->n[i + 1] + l->n[i] / 10;
-		l->n[i] = l->n[i] % 10;
+		l->n[i + 1] = l->n[i + 1] + l->n[i] / BASE;
+		l->n[i] = l->n[i] % BASE;
 	}
 }
 
@@ -54,8 +54,8 @@ void	long_sum_long(t_lf *a, t_lf *b)
 	while(i < MAX_SIZE)
 	{
 		remainder = remainder + a->n[i] + b->n[i];
-		a->n[i] = remainder % 10;
-		remainder /= 10;
+		a->n[i] = remainder % BASE;
+		remainder /= BASE;
 		i++;
 	}
 }
@@ -63,16 +63,18 @@ void	long_sum_long(t_lf *a, t_lf *b)
 void	long_add_zeroes(t_lf *a, int new_exp)
 {
 	int	i;
+	int j;
 	int	shift;
 
-	i = a->exp - 1;
-	shift = new_exp - a->exp;
-	while (i >= 0)
-	{
-		a->n[i + shift] = a->n[i];
-		a->n[i] = 0;
+	i = MAX_SIZE - 1;
+	while (a->n[i] == 0 && i > 0)
 		i--;
-	}
+	j = new_exp - a->exp;
+	shift = 1;
+	while (j-- > 0)
+		shift *= 10;
+	while (i >= 0)
+		a->n[i--] *= shift;
 	a->exp = new_exp;
 }
 
