@@ -49,7 +49,7 @@ static char 	*float_to_str(t_d d, const char *str)
 		e++;
 		i++;
 	}
-	fr_str = long_to_str(fraction);
+	fr_str = long_to_str(fraction);// fix it in calcs
 	if ((int)ft_strlen(fr_str) < fraction->exp)
 		fr_str = ft_strjoin(ft_fill_str('0', fraction->exp - (int)ft_strlen(fr_str)), fr_str);
 	res = ft_strjoin(ft_strjoin(long_to_str(number), "."), fr_str);
