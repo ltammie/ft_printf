@@ -23,19 +23,28 @@ char 	*long_to_str(t_lf *a)
 char 	*lfraction_to_str(t_lf *a)
 {
 	int i;
-	int j;
+	int f;
 	char *str;
+	char *tmp;
 
-
-	i = a->exp - 1;
-	j = 0;
-	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
-		return (NULL);
-	while(j <= i)
+	i = MAX_SIZE - 1;
+	while (a->n[i] == 0 && i > 0)
+		i--;
+	if (i == 0)
 	{
-		str[j] = a->n[i - j] + '0';
-		j++;
+		str = ft_strnew(1);
+		str[0] = '0';
+		return (str);
 	}
-	str[j] = '\0';
+	str = ft_strnew(1);
+	f = i;
+	while(i >= 0)
+	{
+		tmp = ft_itoa(a->n[i]);
+		if ((int)ft_strlen(tmp) < 4 && i != f)
+			tmp = ft_strjoin(ft_fill_str('0', 4 - (int)ft_strlen(tmp)), tmp);
+		str = ft_strjoin(str, tmp);
+		i--;
+	}
 	return (str);
 }

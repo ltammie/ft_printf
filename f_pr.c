@@ -1,15 +1,5 @@
 #include "includes/ft_printf.h"
 
-//void			f_pr(t_cp *z, va_list ap)
-//{
-//	char		*str;
-//
-//	z->precision = z->precision == -1 ? 6 : z->precision;
-//	str = ft_lftoa(cast_f(z, ap), z->precision);
-//	ft_putstr(str);
-//
-//}
-
 static char 	*float_to_str(t_d d, const char *str)
 {
 	int 		e;
@@ -49,7 +39,7 @@ static char 	*float_to_str(t_d d, const char *str)
 		e++;
 		i++;
 	}
-	fr_str = long_to_str(fraction);// fix it in calcs
+	fr_str = lfraction_to_str(fraction);
 	if ((int)ft_strlen(fr_str) < fraction->exp)
 		fr_str = ft_strjoin(ft_fill_str('0', fraction->exp - (int)ft_strlen(fr_str)), fr_str);
 	res = ft_strjoin(ft_strjoin(long_to_str(number), "."), fr_str);
