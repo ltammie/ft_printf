@@ -21,13 +21,11 @@ void	long_mul_short(int s, t_lf *l)
 	while (++i < MAX_SIZE)
 		l->n[i] = l->n[i] * s;
 	i = -1;
-	print_number(l);
 	while (++i < MAX_SIZE)
 	{
 		l->n[i + 1] = l->n[i + 1] + l->n[i] / BASE;
 		l->n[i] = l->n[i] % BASE;
 	}
-	print_number(l);
 }
 
 void	fraction_mul_short(int s, t_lf *l)
@@ -35,7 +33,8 @@ void	fraction_mul_short(int s, t_lf *l)
 	int 	i;
 	int 	carry;
 
-	i = MAX_SIZE - 2;
+	i = MAX_SIZE - 1;
+	carry = 0;
 	while (i >= 0)
 	{
 		carry = l->n[i] * s;
@@ -92,16 +91,15 @@ void	long_sum_long(t_lf *a, t_lf *b)
 void	fraction_sum_fraction(t_lf *a, t_lf *b)
 {
 	int i;
-	int remainder;
+	int carry;
 
-	i = 0;
-	remainder = 0;
-	while(i < MAX_SIZE)
+	i = MAX_SIZE - 2;
+	while(i >= 0)
 	{
-		remainder = a->n[i] + b->n[i];
-		a->n[i - 1] += remainder / BASE;
-		a->n[i] = remainder % BASE;
-		i++;
+		carry = a->n[i] + b->n[i];
+		a->n[i - 1] = a->n[i - 1] + carry / BASE;
+		a->n[i] = carry % BASE;
+		i--;
 	}
 }
 

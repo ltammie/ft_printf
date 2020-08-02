@@ -25,6 +25,7 @@ char 	*lfraction_to_str(t_lf *a)
 	int i;
 	int j;
 	char *str;
+	char *tmp;
 
 	j = MAX_SIZE - 1;
 	while(a->n[j] == 0 && j > 1)
@@ -36,11 +37,14 @@ char 	*lfraction_to_str(t_lf *a)
 		return (str);
 	}
 	str = ft_strnew(1);
-	i = 0;
+	i = 1;
 	while(i <= j)
 	{
-
 		printf("i = %d | val = %d\n",i, a->n[i]);
+		tmp = ft_itoa(a->n[i]);
+		if ((int)ft_strlen(tmp) < 4)
+			tmp = ft_strjoin(ft_fill_str('0', 4 -(int)ft_strlen(tmp)), tmp);
+		str = ft_strjoin(str, tmp);
 		i++;
 	}
 	return (str);
