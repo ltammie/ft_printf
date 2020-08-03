@@ -30,7 +30,6 @@ static char 	*float_to_str(t_d d, const char *str)
 	}
 	e *= -1;
 	tmp = pow_fraction(e, 5000);
-	print_fraction(pow_fraction(20, 5000));
 	while (i < len)
 	{
 		if (str[i] == '1')
@@ -41,6 +40,7 @@ static char 	*float_to_str(t_d d, const char *str)
 		i++;
 	}
 	fr_str = lfraction_to_str(fraction);
+	ft_putstr(fr_str);
 	res = ft_strjoin(ft_strjoin(long_to_str(number), "."), fr_str);
 	return (res);
 }

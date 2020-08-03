@@ -13,6 +13,6 @@ int 	main(void)
 //	ft_printf("mine str|%s\n", "abcde");
 //	printf("orig str|%s\n", "abcde");
 
-	printf("o|%.37f\n", 0.000001);
-	ft_printf("m|%f\n", 0.000001f);
+	printf("o|%.0f\n", 5.0f);
+	ft_printf("m|%f\n", 5.0f);
 }

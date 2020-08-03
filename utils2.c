@@ -40,7 +40,7 @@ char 	*lfraction_to_str(t_lf *a)
 	i = 1;
 	while(i <= j)
 	{
-		printf("i = %d | val = %d\n",i, a->n[i]);
+//		printf("i = %d | val = %d\n",i, a->n[i]);
 		tmp = ft_itoa(a->n[i]);
 		if ((int)ft_strlen(tmp) < 4)
 			tmp = ft_strjoin(ft_fill_str('0', 4 -(int)ft_strlen(tmp)), tmp);
