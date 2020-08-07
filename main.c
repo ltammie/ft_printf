@@ -10,9 +10,9 @@ int 	main(void)
 //	ft_printf("mine str|%-*.1s\n", 3, "ez");
 //	printf("orig str|%-*.1s\n", 3, "ez");
 
-//	ft_printf("mine str|%s\n", "abcde");
-//	printf("orig str|%s\n", "abcde");
+	ft_printf("mine str|hello, %s.\n", NULL);
+	printf("orig str|hello, %s.\n", NULL);
 
-	printf("o|%Lf\n", LDBL_MAX);
-	ft_printf("m|%Lf\n", LDBL_MAX);
+//	printf("o|%f\n", 0.029030f);
+//	ft_printf("m|%ff\n", 0.029030f);
 }
