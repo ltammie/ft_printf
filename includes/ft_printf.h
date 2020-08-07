@@ -1,7 +1,7 @@
 #ifndef FT_PRINTF_H
 #define FT_PRINTF_H
 
-#define MAX_SIZE 10000
+#define MAX_SIZE 1000000
 #define BASE 10000
 #include "../libft/libft.h"
 #include <stdarg.h>
@@ -41,7 +41,6 @@ typedef struct 		s_lf
 {
 	int 			n[MAX_SIZE];
 	int 			exp;
-	int 			fraction_flag;
 }					t_lf;
 
 typedef struct		s_cp
@@ -117,15 +116,12 @@ t_lf				*new_long_number();
 void				long_mul_short(int s, t_lf *l);
 t_lf				*pow_long(int p, int c);
 void				long_sum_long(t_lf *a, t_lf *b);
-void				long_add_zeroes(t_lf *a, int new_exp);
 char				*long_to_str(t_lf *a);
 char				*lfraction_to_str(t_lf *a);
 void				long_div_two(t_lf *l);
-
-
-
-
-
+void				fraction_mul_short(int s, t_lf *l);
+t_lf				*pow_fraction(int p, int c);
+void				fraction_sum_fraction(t_lf *a, t_lf *b);
 
 
 /*
@@ -134,5 +130,6 @@ void				long_div_two(t_lf *l);
 
 void				print_struct(t_cp *res);
 void				print_number(t_lf *n);
+void				print_fraction(t_lf *n);
 
 #endif

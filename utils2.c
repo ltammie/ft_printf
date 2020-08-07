@@ -25,17 +25,27 @@ char 	*lfraction_to_str(t_lf *a)
 	int i;
 	int j;
 	char *str;
+	char *tmp;
 
-
-	i = a->exp - 1;
-	j = 0;
-	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
-		return (NULL);
-	while(j <= i)
+	j = MAX_SIZE - 1;
+	while(a->n[j] == 0 && j > 1)
+		j--;
+	if (j == 0)
 	{
-		str[j] = a->n[i - j] + '0';
-		j++;
+		str = ft_strnew(1);
+		str[0] = '0';
+		return (str);
 	}
-	str[j] = '\0';
+	str = ft_strnew(1);
+	i = 1;
+	while(i <= j)
+	{
+//		printf("i = %d | val = %d\n",i, a->n[i]);
+		tmp = ft_itoa(a->n[i]);
+		if ((int)ft_strlen(tmp) < 4)
+			tmp = ft_strjoin(ft_fill_str('0', 4 -(int)ft_strlen(tmp)), tmp);
+		str = ft_strjoin(str, tmp);
+		i++;
+	}
 	return (str);
 }
