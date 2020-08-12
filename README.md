@@ -13,6 +13,7 @@ There are 2 ways of using this function in your project:
 * If you choose first variant, run:
 ```
 git clone https://github.com/ltammie/ft_printf && cd ft_printf && make -s && make clean -s
-```  Now you can link libft.a to your projects!
+```
+  Now you can link libft.a to your projects!
 
 * If you choose second variant, go to [libft project page](https://github.com/ltammie/libft). There are some instructions of how to use it.
