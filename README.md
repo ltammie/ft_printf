@@ -14,6 +14,6 @@ Project about recoding classic С function *printf*
  ```
  git clone https://github.com/ltammie/ft_printf && cd ft_printf && make -s && make clean -s
  ```
-   Now you can link libft.a to your projects!
+     Now you can link libft.a to your projects!
 
  If you choose second variant, go to [libft project page](https://github.com/ltammie/libft). There are some instructions of how to use it.
